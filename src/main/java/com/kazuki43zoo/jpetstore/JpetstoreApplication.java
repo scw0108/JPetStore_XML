@@ -23,7 +23,7 @@ import org.springframework.context.annotation.ImportResource;
  * @author Kazuki Shimizu
  */
 @SpringBootApplication
-@ImportResource("classpath:AccountConfig.xml")
+@ImportResource("classpath:Config.xml")
 public class JpetstoreApplication {
 
 	public static void main(String[] args) {

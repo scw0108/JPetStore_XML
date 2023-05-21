@@ -30,10 +30,6 @@ import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 @Configuration
 public class ApplicationConfig {
 
-  @Bean
-  Clock clock() {
-    return Clock.systemDefaultZone();
-  }
 
   @Bean
   List<String> clCreditCardTypes() {

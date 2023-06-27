@@ -17,6 +17,18 @@
         <constructor-arg ref="accountMapper"/>
     </bean>
 
+    <!-- Define ApplicationEventPublisher bean -->
+    <bean id="publisher" class="org.springframework.context.annotation.AnnotationConfigApplicationContext" init-method="refresh">
+    </bean>
+
+
+
+    <bean id="myAccountController" class="com.kazuki43zoo.jpetstore.ui.controller.MyAccountController">
+        <constructor-arg ref="accountService"/>
+        <constructor-arg ref="publisher"/>
+    </bean>
+
+
     <bean id="catalogService" class="com.kazuki43zoo.jpetstore.service.CatalogService">
         <constructor-arg ref="categoryMapper"/>
         <constructor-arg ref="itemMapper"/>
@@ -89,4 +101,5 @@
         <property name="mapperInterface" value="com.kazuki43zoo.jpetstore.mapper.SequenceMapper"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
+
 </beans>

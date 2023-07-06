@@ -2,6 +2,38 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="clCreditCardTypes" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <value>Visa</value>
+                <value>MasterCard</value>
+                <value>American Express</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="clCategories" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <value>FISH</value>
+                <value>DOGS</value>
+                <value>REPTILES</value>
+                <value>CATS</value>
+                <value>BIRDS</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="clLanguages" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <value>English</value>
+                <value>Japanese</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
     <bean id="accountController" class="com.kazuki43zoo.jpetstore.ui.controller.AccountController">
         <constructor-arg ref="accountService"/>
     </bean>
@@ -10,14 +42,14 @@
         <constructor-arg ref="accountMapper"/>
         <constructor-arg ref="passwordEncoder"/>
     </bean>
-
+    <bean id="authController" class="com.kazuki43zoo.jpetstore.ui.controller.AuthController"/>
     <bean id="passwordEncoder" class="org.springframework.security.crypto.password.Pbkdf2PasswordEncoder"/>
 
     <bean id="accountUserDetailsService" class="com.kazuki43zoo.jpetstore.service.AccountUserDetailsService">
         <constructor-arg ref="accountMapper"/>
     </bean>
 
-    <!-- Define ApplicationEventPublisher bean -->
+
     <bean id="publisher" class="org.springframework.context.annotation.AnnotationConfigApplicationContext" init-method="refresh">
     </bean>
 
@@ -36,16 +68,19 @@
     </bean>
 
     <bean id="cart" class="com.kazuki43zoo.jpetstore.ui.Cart" />
+
     <bean id="cartController" class="com.kazuki43zoo.jpetstore.ui.controller.CartController">
         <constructor-arg ref="catalogService"/>
         <constructor-arg ref="cart"/>
     </bean>
 
     <bean id="productSearchCriteria" class="com.kazuki43zoo.jpetstore.ui.ProductSearchCriteria" />
+
     <bean id="catalogController" class="com.kazuki43zoo.jpetstore.ui.controller.CatalogController">
         <constructor-arg ref="catalogService"/>
         <constructor-arg ref="productSearchCriteria"/>
     </bean>
+
     <bean id="clock" class="java.time.Clock" factory-method="systemDefaultZone"/>
 
     <bean id="orderService" class="com.kazuki43zoo.jpetstore.service.OrderService">

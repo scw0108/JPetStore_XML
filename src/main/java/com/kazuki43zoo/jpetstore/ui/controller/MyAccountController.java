@@ -22,7 +22,6 @@ import com.kazuki43zoo.jpetstore.component.event.EntityChangedEvent;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -44,7 +43,6 @@ public class MyAccountController {
 	public MyAccountController(AccountService accountService, ApplicationEventPublisher publisher) {
 		this.accountService = accountService;
 		this.publisher = publisher;
-		System.out.println((publisher));
 	}
 
 	@ModelAttribute

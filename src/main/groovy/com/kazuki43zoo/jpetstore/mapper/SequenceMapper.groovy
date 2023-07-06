@@ -24,7 +24,7 @@ import org.apache.ibatis.annotations.Update
 /**
  * @author Kazuki Shimizu
  */
-@Mapper
+
 @CacheNamespace
 interface SequenceMapper {
 

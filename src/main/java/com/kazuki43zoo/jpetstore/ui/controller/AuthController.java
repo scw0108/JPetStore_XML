@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Kazuki Shimizu
  */
 @RequestMapping("/login")
-@Controller
 public class AuthController {
 
 	@GetMapping

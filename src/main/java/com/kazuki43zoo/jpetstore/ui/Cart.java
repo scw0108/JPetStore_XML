@@ -16,7 +16,6 @@
 package com.kazuki43zoo.jpetstore.ui;
 
 import com.kazuki43zoo.jpetstore.domain.Item;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
 import java.io.Serializable;
